@@ -1,0 +1,22 @@
+public class HashFunctionTest {
+    public static int hashFunction(String key, int tableSize) {
+        int hash = 0;
+        for (char c : key.toCharArray()) {
+            hash += c;
+        }
+        return hash % tableSize;
+    }
+
+    public static void main(String[] args) {
+        int tableSize = 10;
+
+        String key1 = "data";
+        String key2 = "structure";
+
+        int hash1 = hashFunction(key1, tableSize);
+        int hash2 = hashFunction(key2, tableSize);
+
+        System.out.println("Hash value for \"" + key1 + "\": " + hash1);
+        System.out.println("Hash value for \"" + key2 + "\": " + hash2);
+    }
+}
